@@ -32,23 +32,11 @@ private String temp;
     public GUI() 
 	{         
         DbUtils.initDb();
-        if(Objects.equals(DbUtils.getClassName(), "org.apache.derby.jdbc.ClientDriver"))
-        {
-            if(!DbUtils.checkTable("MOVIES")){
-                DbUtils.createMovieDb();
-            }
-            if(!DbUtils.checkTable("LIBRARYFOLDER")){
-                DbUtils.createMovieLibraryFolderDb();
-            }
+        if(!DbUtils.checkTable("MOVIES")){
+            DbUtils.createMovieDb();
         }
-        else if(Objects.equals(DbUtils.getClassName(), "com.mysql.jdbc.Driver"))
-        {
-            if(!DbUtils.checkTable("movies")){
-                DbUtils.createMovieDb();
-            }
-            if(!DbUtils.checkTable("libraryfolder")){
-                DbUtils.createMovieLibraryFolderDb();
-            }       
+        if(!DbUtils.checkTable("LIBRARYFOLDER")){
+            DbUtils.createMovieLibraryFolderDb();
         }
         allMoviesal = DbUtils.getMovieDetails();
         getMovieData(); 
@@ -64,24 +52,12 @@ private String temp;
         DbUtils.setPassword(password);
         DbUtils.setUser(user);
         DbUtils.initDb();
-        if(Objects.equals(DbUtils.getClassName(), "org.apache.derby.jdbc.ClientDriver"))
-        {
-            if(!DbUtils.checkTable("MOVIES")){
-                DbUtils.createMovieDb();
-            }
-            if(!DbUtils.checkTable("LIBRARYFOLDER")){
-                DbUtils.createMovieLibraryFolderDb();
-            }
+        if(!DbUtils.checkTable("MOVIES")){
+            DbUtils.createMovieDb();
         }
-        else if(Objects.equals(DbUtils.getClassName(), "com.mysql.jdbc.Driver"))
-        {
-            if(!DbUtils.checkTable("movies")){
-                DbUtils.createMovieDb();
-            }
-            if(!DbUtils.checkTable("libraryfolder")){
-                DbUtils.createMovieLibraryFolderDb();
-            }       
-        }   
+        if(!DbUtils.checkTable("LIBRARYFOLDER")){
+            DbUtils.createMovieLibraryFolderDb();
+        }
         allMoviesal = DbUtils.getMovieDetails();
         getMovieData(); 
         imagePath = UrlUtils.getBaseImagePath();
