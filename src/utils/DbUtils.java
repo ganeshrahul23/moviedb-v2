@@ -227,20 +227,7 @@ public class DbUtils {
 		}
 	
 	}
-        
-    public static void deleteMoviesById(String movieID)
-	{
-        try {
-            String query = "DELETE FROM MOVIES WHERE  MOVIEID = '" + movieID+"'";
-            //System.out.println(query);
-            PreparedStatement ps1 = con.prepareStatement(query);
-            ps1.executeUpdate();
-        } catch (SQLException ex) {
-            Logger.getLogger(DbUtils.class.getName()).log(Level.SEVERE, null, ex);
-        }
-	
-    }  
-        
+           
     public static void deleteMoviesByFolderName(String FolderName)
 	{
         try {
